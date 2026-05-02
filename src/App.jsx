@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Jorge Antonio Hernández Nájera</h1>
+      <h1>Jorge Antonio Hernández Nájera - Parcial 2</h1>
     </div>
   )
 }
