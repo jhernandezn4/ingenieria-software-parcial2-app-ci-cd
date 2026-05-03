@@ -1,12 +1,15 @@
 import express from 'express';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
-const __dirname = new URL('.', import.meta.url).pathname;
 
-app.use(express.static('dist'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.get('*', (req, res) => {
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('/{*path}', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
